@@ -1,0 +1,32 @@
+#include <iostream> 
+#include <fstream> 
+#include <time.h>
+clock_t start, koniec; 
+
+
+using namespace std; 
+
+int main (void) { 
+    int n;
+    ifstream plik("tablica.txt");                      // pobieranie pliku o nazwie tablica.txt z danymi 
+    if (!plik.is_open()) 
+    throw-1; 
+    char tablica[100]; 
+    for (int i=0; i<100; i++) { 
+        plik >> tablica[i]; 
+    } 
+start = clock();                                    //start zegara 
+
+    for (int i=0; tablica[i]!=NULL; i++) { 
+        n=(tablica[i]*2);
+        cout << n; 
+    } 
+koniec = clock();                                      //zatrzymanie zegara
+long delta=(long)(koniec - start);
+
+cout<<"\n";
+cout<<clock();                                         //wyswietlenie czasu operacji w mili sekundach
+    
+    getchar();
+    return 0; 
+}
